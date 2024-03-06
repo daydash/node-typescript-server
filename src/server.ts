@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import http from "http";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
@@ -21,7 +21,7 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.get("/", (req, res, next) => {
+app.get("/", (req: Request, res: Response) => {
 	res.send("HOME");
 });
 
